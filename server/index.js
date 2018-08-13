@@ -18,7 +18,7 @@ app.get ("/comment/:commentid", (req,res) => {
         return res.json(identity);
     }
     comments.find(newCommentNow);
-    return res.json({identity});
+    return res.json(comment.body);
 });
 app.post ("/comments", (req,res,) => {
     let newComment = req.body;
