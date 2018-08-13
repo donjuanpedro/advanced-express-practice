@@ -13,12 +13,12 @@ app.get ("/comments", (req,res,) => {
     return res.json(comments);
 });
 app.get ("/comment/:commentid", (req,res) => {
-    var identity = req.params.commentid;
-    function newFunction(identity) {
+    var identity = req.params.id;
+    function newCommentNow(identity) {
         return res.json(identity);
     }
-    comments.find(newFunction);
-    return res.json(identity);
+    comments.find(newCommentNow);
+    return res.json({identity});
 });
 app.post ("/comments", (req,res,) => {
     let newComment = req.body;
