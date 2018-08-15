@@ -3,7 +3,7 @@ let vehicles = require("../vehicles");
 module.exports.list =  function list(req, res) {
     return res.json(vehicles);
    }
-   module.exports.show =  function show(request, response) {
+   module.exports.show =  function show(req, res) {
     let carId = req.params.id;
     let myCar = vehicles.find((car) => {
         return (car._id == carId)

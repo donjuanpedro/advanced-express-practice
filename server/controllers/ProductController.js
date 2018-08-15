@@ -3,7 +3,7 @@ let products = require("../products");
 module.exports.list =  function list(req, res) {
     return res.json(products);
    }
-   module.exports.show =  function show(request, response) {
+   module.exports.show =  function show(req, res) {
     let productId = req.params.id;
     let myProduct = products.find((product) => {
         return (product._id == productId)

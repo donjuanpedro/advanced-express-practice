@@ -1,13 +1,13 @@
 let express = require("express");
 let bodyParser = require("body-parser");
-
+const app = express();
 
 let CommentRoutes = require("./modelRoutes/commentRoutes");
 let ContactRoutes = require("./modelRoutes/contactRoutes");
 let VehiclesRoutes = require("./modelRoutes/vehiclesRoutes");
 let ProductsRoutes = require("./modelRoutes/productsRoutes");
 
-const app = express();
+
 
 
 app.use(bodyParser.json());

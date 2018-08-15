@@ -1,6 +1,6 @@
 let express = require("express");
 const router = express.Router();
-let {list,show,create,update,remove} = require("../controllers/VehiclesController");
+let {list,show,create} = require("../controllers/VehiclesController");
 
 router.get("/vehicles", list);
 router.get("/vehicle/:id", show);
