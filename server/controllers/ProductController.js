@@ -11,8 +11,8 @@ module.exports.list =  function list(req, res) {
     return res.json(myProduct)
    }
    module.exports.create =  function create(req, res) {
-    req.body._id = prodId;
-    prodId ++;
+    // req.body._id = prodId;
+    // prodId ++;
     let newProduct = req.body;
     products.push(newProduct);
     return res.json(newProduct);

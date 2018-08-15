@@ -11,8 +11,8 @@ module.exports.list =  function list(req, res) {
     return res.json(myContact)
    }
    module.exports.create =  function create(req, res) {
-    req.body._id = personId;
-    personId ++;
+    // req.body._id = personId;
+    // personId ++;
     let newContact = req.body;
     contacts.push(newContact);
     return res.json(newContact);
