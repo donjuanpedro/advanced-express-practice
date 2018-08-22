@@ -1,21 +1,25 @@
-let products = require("../products");
+let ProductModel = require("../models/productModel");
+
 
 module.exports.list =  function list(req, res) {
-    return res.json(products);
+    ProductModel.find({}).exec()
+    .then(products => {
+        console.log(products);
+    });
    }
    module.exports.show =  function show(req, res) {
-    let productId = req.params.id;
-    let myProduct = products.find((product) => {
-        return (product._id == productId)
+    ProductModel.findById("sldjfoi").exec()
+    .then(product => {
+    console.log(product);
     });
-    return res.json(myProduct)
+
    }
    module.exports.create =  function create(req, res) {
-    // req.body._id = prodId;
-    // prodId ++;
-    let newProduct = req.body;
-    products.push(newProduct);
-    return res.json(newProduct);
+    const newProduct= new ProductModel(req.body);
+    newProduct.save()
+    .then(savedProduct => {
+        response.json(savedProduct);
+    });
+
    }
-  
    
