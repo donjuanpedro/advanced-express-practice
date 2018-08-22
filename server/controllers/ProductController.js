@@ -18,7 +18,7 @@ module.exports.list =  function list(req, res) {
     const newProduct= new ProductModel(req.body);
     newProduct.save()
     .then(savedProduct => {
-        response.json(savedProduct);
+        res.json(savedProduct);
     });
 
    }

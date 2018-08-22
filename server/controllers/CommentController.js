@@ -17,7 +17,7 @@ module.exports.list =  function list(req, res) {
     const newComment= new CommentModel(req.body);
     newComment.save()
     .then(savedComment => {
-        response.json(savedComment);
+        res.json(savedComment);
     });
 
    }

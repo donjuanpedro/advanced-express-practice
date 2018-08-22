@@ -18,7 +18,7 @@ module.exports.list =  function list(req, res) {
     const newVehicle= new VehicleModel(req.body);
     newVehicle.save()
     .then(savedVehicle => {
-        response.json(savedVehicle);
+        res.json(savedVehicle);
     });
 
    }
