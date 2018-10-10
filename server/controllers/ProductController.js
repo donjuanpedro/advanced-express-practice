@@ -4,13 +4,13 @@ let ProductModel = require("../models/productModel");
 module.exports.list =  function list(req, res) {
     ProductModel.find({}).exec()
     .then(products => {
-        console.log(products);
+        res.json(products);
     });
    }
    module.exports.show =  function show(req, res) {
     ProductModel.findById("sldjfoi").exec()
     .then(product => {
-    console.log(product);
+        res.json(product);
     });
 
    }

@@ -3,13 +3,13 @@ let CommentModel = require("../models/commentModel");
 module.exports.list =  function list(req, res) {
     CommentModel.find({}).exec()
     .then(comments => {
-        console.log(comments);
+        res.json(comments);
     });
    }
    module.exports.show =  function show(req, res) {
     CommentModel.findById("sldjfoi").exec()
     .then(comment => {
-    console.log(comment);
+        res.json(comment);
     });
 
    }

@@ -4,13 +4,13 @@ let ContactModel = require("../models/contactModel");
 module.exports.list =  function list(req, res) {
     ContactModel.find({}).exec()
     .then(contacts => {
-        console.log(contacts);
+        res.json(contacts);
     });
    }
    module.exports.show =  function show(req, res) {
     ContactModel.findById("sldjfoi").exec()
     .then(contact => {
-    console.log(contact);
+        res.json(contact);
     });
 
    }
