@@ -8,9 +8,8 @@ let VehiclesRoutes = require("./modelRoutes/vehiclesRoutes");
 let ProductsRoutes = require("./modelRoutes/productsRoutes");
 
 let mongoose = require("mongoose");
+mongoose.connect("mongodb://walkerlyle2:dietcoke1@ds229552.mlab.com:29552/advanced-express-practice");
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://walkerlyle:d7slRtvK@ds229552.mlab.com:29552/advanced-express-practice");
-
 
 app.use(bodyParser.json());
 
@@ -21,7 +20,7 @@ app.use(ProductsRoutes);
 
 
 
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 5000;
 app.listen(port, () => {
 console.log(`Listening on port:${port}`);
 });
