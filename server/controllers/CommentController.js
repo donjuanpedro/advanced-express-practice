@@ -7,11 +7,13 @@ module.exports.list =  function list(req, res) {
     });
    }
    module.exports.show =  function show(req, res) {
-    CommentModel.findById("sldjfoi").exec()
+    CommentModel.findById("").exec()
+    .then(comment => {
+        return comment.save();
+    })
     .then(comment => {
         res.json(comment);
     });
-
    }
    module.exports.create =  function create(req, res) {
     const newComment= new CommentModel(req.body);

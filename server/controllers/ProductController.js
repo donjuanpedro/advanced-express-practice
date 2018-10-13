@@ -8,7 +8,10 @@ module.exports.list =  function list(req, res) {
     });
    }
    module.exports.show =  function show(req, res) {
-    ProductModel.findById("sldjfoi").exec()
+    ProductModel.findById("").exec()
+    .then(product => {
+        return product.save();
+    })
     .then(product => {
         res.json(product);
     });

@@ -8,7 +8,10 @@ module.exports.list =  function list(req, res) {
     });
    }
    module.exports.show =  function show(req, res) {
-    ContactModel.findById("sldjfoi").exec()
+    ContactModel.findById("").exec()
+    .then(contact => {
+        return contact.save();
+    })
     .then(contact => {
         res.json(contact);
     });
