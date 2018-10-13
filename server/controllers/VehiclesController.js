@@ -8,10 +8,7 @@ module.exports.list =  function list(req, res) {
     });
    }
    module.exports.show =  function show(req, res) {
-    VehicleModel.findById("").exec()
-    .then(vehicle => {
-        return vehicle.save();
-    })
+    VehicleModel.findById(req.params.id).exec()
     .then(vehicle => {
         res.json(vehicle);
     });

@@ -7,10 +7,7 @@ module.exports.list =  function list(req, res) {
     });
    }
    module.exports.show =  function show(req, res) {
-    CommentModel.findById("").exec()
-    .then(comment => {
-        return comment.save();
-    })
+    CommentModel.findById(req.params.id).exec()
     .then(comment => {
         res.json(comment);
     });

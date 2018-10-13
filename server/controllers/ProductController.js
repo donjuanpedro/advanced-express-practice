@@ -8,10 +8,7 @@ module.exports.list =  function list(req, res) {
     });
    }
    module.exports.show =  function show(req, res) {
-    ProductModel.findById("").exec()
-    .then(product => {
-        return product.save();
-    })
+    ProductModel.findById(req.params.id).exec()
     .then(product => {
         res.json(product);
     });
